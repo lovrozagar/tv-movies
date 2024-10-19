@@ -18,6 +18,6 @@ pre-push:
       glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
       run: bunx biome check --no-errors-on-unmatched --files-ignore-unknown=true {push_files}
     2_build:
-      run: bunx next build
+      run: bunx vite build
     3_bundlesize_check:
       run: bunx bundlewatch --config bundlewatch.config.json
