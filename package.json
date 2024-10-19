@@ -1,0 +1,51 @@
+{
+	"dependencies": {
+		"@t3-oss/env-core": "^0.11.1",
+		"react": "^18",
+		"react-dom": "^18"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.2",
+		"@commitlint/cli": "^18.6.1",
+		"@commitlint/config-conventional": "^18.6.2",
+		"@total-typescript/ts-reset": "^0.5.1",
+		"@types/node": "^20",
+		"@types/react": "^18",
+		"@types/react-dom": "^18",
+		"@vitejs/plugin-react-swc": "^3.7.0",
+		"autoprefixer": "^10.0.1",
+		"bun-types": "latest",
+		"bundlewatch": "^0.4.0",
+		"commitlint": "^19.4.0",
+		"globals": "^15.9.0",
+		"lefthook": "^1.7.12",
+		"npm-check-updates": "^16.14.20",
+		"postcss": "^8.4.47",
+		"tailwindcss": "^3.4.13",
+		"typescript": "^5.6.2",
+		"typescript-coverage-report": "^1.0.0",
+		"vite": "^5.4.8"
+	},
+	"name": "tv-movies",
+	"scripts": {
+		"build": "tsc -b && vite build",
+		"bundlesize:check": "bunx bundlewatch --config bundlewatch.config.json",
+		"clear": "rm -rf node_modules",
+		"clear:soft": "rm -rf node_modules/.vite",
+		"commitlint:init": "chmod +x .lefthook/commit-msg/commitlint.sh",
+		"dev": "vite",
+		"lefthook:init": "bunx lefthook install",
+		"lint": "bunx @biomejs/biome lint ./src",
+		"lint:check": "bunx @biomejs/biome check ./src",
+		"lint:fix": "bunx @biomejs/biome lint --write ./src",
+		"lint:format": "bunx @biomejs/biome format ./src",
+		"preinstall": "npx only-allow bun",
+		"preview": "vite preview",
+		"setup": "bunx lefthook install && chmod +x .lefthook/commit-msg/commitlint.sh && bun install",
+		"type:check": "tsc --noEmit",
+		"type:coverage": "typescript-coverage-report",
+		"update:check": "bun x npm-check-updates"
+	},
+	"type": "module",
+	"version": "0.0.1"
+}
