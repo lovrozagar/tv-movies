@@ -1,0 +1,7 @@
+export { BookmarkIcon } from '@/component/icon/bookmark-icon'
+export { HomeIcon } from '@/component/icon/home-icon'
+export { SearchIcon } from '@/component/icon/search-icon.component'
+export { SunIcon } from '@/component/icon/sun.icon.component'
+export { MoonIcon } from '@/component/icon/moon-icon'
+export { TrendIcon } from '@/component/icon/trend-icon'
+export { VideoIcon } from '@/component/icon/video-icon'
