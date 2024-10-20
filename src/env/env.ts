@@ -6,6 +6,10 @@ const rawEnvVariables = [
 		value: import.meta.env.VITE_TMDB_BASE_URL,
 	},
 	{
+		name: 'TMDB_POSTER_URL',
+		value: import.meta.env.VITE_TMDB_POSTER_URL,
+	},
+	{
 		name: 'TMBD_API_KEY',
 		value: import.meta.env.VITE_TMDB_API_KEY,
 	},
@@ -31,6 +35,7 @@ const validatedEnvVariables = Object.fromEntries(
 
 const ENV = {
 	TMBD_BASE_URL: validatedEnvVariables.TMBD_BASE_URL,
+	TMDB_POSTER_URL: validatedEnvVariables.TMDB_POSTER_URL,
 	TMBD_API_KEY: validatedEnvVariables.TMBD_API_KEY,
 	TMDB_READ_ACCESS_TOKEN: validatedEnvVariables.TMDB_READ_ACCESS_TOKEN,
 }
