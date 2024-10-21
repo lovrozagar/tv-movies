@@ -1,6 +1,7 @@
 import '@/style/globals.css'
 
 import { Navbar } from '@/module/navbar'
+import { LazyMotionProvider } from '@/provider'
 import { Router } from '@/router'
 import { queryClient } from '@/utils'
 import { init } from '@noriginmedia/norigin-spatial-navigation'
@@ -16,10 +17,10 @@ init({
 function App() {
 	return (
 		<QueryClientProvider client={queryClient}>
-			<Navbar />
-			<main className='px-4 py-2'>
+			<LazyMotionProvider>
+				<Navbar />
 				<Router />
-			</main>
+			</LazyMotionProvider>
 		</QueryClientProvider>
 	)
 }
