@@ -13,7 +13,7 @@ function useMovieDetailsQuery(props: UseMovieDetailsQueryProps) {
 		queryKey: [getQueryKey('details'), movieId],
 		queryFn: async () => {
 			return await fetchQuery<ApiResponse<MovieDetails>>({
-				path: getApiPath(`/movie/${movieId}`),
+				path: getApiPath(`/movie/${movieId}?append_to_response=videos,credits`),
 			})
 		},
 	})

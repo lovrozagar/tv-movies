@@ -1,4 +1,4 @@
-import { useFreshRef } from '@/hook/local/useFreshRef'
+import { useFreshRef } from '@/hook/local/useFreshRef/useFreshRef'
 import { useEffect } from 'react'
 
 type UseMutationObserverProps<T extends HTMLElement> = {

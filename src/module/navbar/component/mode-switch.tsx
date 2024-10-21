@@ -1,6 +1,6 @@
 import { Button } from '@/component/button'
 import { MoonIcon, SunIcon } from '@/component/icon'
-import { useMutationObserver } from '@/hook/local/useMutationObserver'
+import { useMutationObserver } from '@/hook/local'
 import { DOCUMENT_MODE_ATTRIBUTE_KEY } from '@/module/navbar/constant/mode'
 import type { Mode } from '@/module/navbar/type/mode'
 import {
