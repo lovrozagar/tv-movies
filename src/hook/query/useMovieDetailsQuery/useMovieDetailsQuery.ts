@@ -1,4 +1,4 @@
-import type { ApiResponse, MovieDetails } from '@/api'
+import type { MovieDetails } from '@/api'
 import { fetchQuery, getApiPath, getQueryKey } from '@/utils'
 import { useQuery } from '@tanstack/react-query'
 
@@ -12,7 +12,7 @@ function useMovieDetailsQuery(props: UseMovieDetailsQueryProps) {
 	return useQuery({
 		queryKey: [getQueryKey('details'), movieId],
 		queryFn: async () => {
-			return await fetchQuery<ApiResponse<MovieDetails>>({
+			return await fetchQuery<MovieDetails>({
 				path: getApiPath(`/movie/${movieId}?append_to_response=videos,credits`),
 			})
 		},

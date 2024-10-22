@@ -1,3 +1,3 @@
-type QueryKey = 'category'
+type QueryKey = 'category' | 'details'
 
 export type { QueryKey }

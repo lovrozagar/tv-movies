@@ -45,6 +45,41 @@ type MovieDetails = {
 	video: boolean
 	vote_average: number
 	vote_count: number
+	credits: {
+		cast: {
+			adult: boolean
+			credit_id: string
+			department: string
+			gender: number
+			id: number
+			job: string
+			known_for_department: string
+			name: string
+			original_name: string
+			popularity: number
+			profile_path: string | null
+		}[]
+		crew: {
+			adult: boolean
+			credit_id: string
+			department: string
+			gender: number
+			id: number
+			job: string
+			known_for_department: string
+			name: string
+			original_name: string
+			popularity: number
+			profile_path: string | null
+		}
+	}
+	videos: {
+		results: {
+			id: string
+			name: string
+			key: string
+		}[]
+	}
 }
 
 export type { MovieDetails }

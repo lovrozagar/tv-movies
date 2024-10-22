@@ -1,4 +1,4 @@
-import type { ApiResponse, MovieItem, Page } from '@/api'
+import type { MovieItem, Page } from '@/api'
 import { fetchQuery, getApiPath, getQueryKey } from '@/utils'
 import { useInfiniteQuery } from '@tanstack/react-query'
 
@@ -13,7 +13,7 @@ function useCategoryMovieListQuery(props: UseCategoryMovieListQueryProps) {
 		initialPageParam: 1,
 		queryKey: [getQueryKey('category'), genreId],
 		queryFn: async ({ pageParam }) => {
-			return await fetchQuery<ApiResponse<Page<MovieItem>>>({
+			return await fetchQuery<Page<MovieItem>>({
 				path: getApiPath(`/discover/movie?with_genres=${genreId}&page=${pageParam}`),
 			})
 		},
