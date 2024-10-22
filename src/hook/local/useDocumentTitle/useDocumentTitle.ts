@@ -1,5 +1,7 @@
 import { useEffect } from 'react'
 
+const BASE_TITLE = 'Movies'
+
 type UseDocumentTitleProps = {
 	title: string | undefined
 }
@@ -10,10 +12,10 @@ function useDocumentTitle(props: UseDocumentTitleProps) {
 	useEffect(() => {
 		if (!title) return
 
-		document.title = title
+		document.title = `${title} | ${BASE_TITLE}`
 
 		return () => {
-			document.title = 'Movies'
+			document.title = BASE_TITLE
 		}
 	}, [title])
 }

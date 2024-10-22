@@ -1,4 +1,5 @@
 export { useDocumentTitle } from '@/hook/local/useDocumentTitle/useDocumentTitle'
+export { useEventListener } from '@/hook/local/useEventListener/useEventListener'
 export { useFreshRef } from '@/hook/local/useFreshRef/useFreshRef'
 export { useMediaQuery } from '@/hook/local/useMediaQuery/useMediaQuery'
 export { useMotion } from '@/hook/local/useMotion/useMotion'
