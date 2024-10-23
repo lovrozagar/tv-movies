@@ -1,4 +1,4 @@
-import type { NavigationPath } from '@/type'
+import type { NavigationPath } from '@/types'
 
 function getNavigationPath(path: NavigationPath) {
 	return path

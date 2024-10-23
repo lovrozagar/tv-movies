@@ -1,6 +1,6 @@
 'use client'
 
-import { useFreshRef } from '@/hook/local/useFreshRef/useFreshRef'
+import { useFreshRef } from '@/hooks/local/useFreshRef/useFreshRef'
 import { noop } from '@/utils'
 import React from 'react'
 

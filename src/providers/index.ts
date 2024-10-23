@@ -1,2 +1,2 @@
-export { FocusProvider } from '@/provider/focus/FocusProvider'
-export { LazyMotionProvider } from '@/provider/lazyMotion/LazyMotion'
+export { FocusProvider } from '@/providers/focus/FocusProvider'
+export { LazyMotionProvider } from '@/providers/lazyMotion/LazyMotion'

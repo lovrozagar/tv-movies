@@ -1,6 +1,6 @@
 import { HOME_GENRE_LIST } from '@/constants'
 import { Track } from '@/modules/track'
-import { HomeTrack } from '@/screen/home/components/HomeTrack'
+import { HomeTrack } from '@/screens/home/components/HomeTrack'
 
 const HomeScreen = () => {
 	return (

@@ -1,5 +1,5 @@
 async function lazyMotionFeature() {
-	const domAnimation = (await import('@/provider/lazyMotion/domAnimation'))?.default
+	const domAnimation = (await import('@/providers/lazyMotion/domAnimation'))?.default
 
 	return domAnimation
 }

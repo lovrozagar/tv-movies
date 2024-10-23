@@ -1,6 +1,6 @@
 import { StarIcon } from '@/components/icon/star-icon'
 import { Image } from '@/components/image'
-import type { GetMergedCategoryMovieListPagesDataReturn } from '@/hook/query/useCategoryMovieListInfiniteQuery/getMergedCategoryMovieListPagesData'
+import type { GetMergedCategoryMovieListPagesDataReturn } from '@/hooks/query/useCategoryMovieListInfiniteQuery/getMergedCategoryMovieListPagesData'
 import { Link } from '@/modules/focusable'
 import { getImageSource } from '@/utils'
 

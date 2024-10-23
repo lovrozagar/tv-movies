@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+/* variables */
+
+	:root {
+		/* shared */
+		--radius: 0.5rem;
+		--ring-width: 2px;
+		--ring-offset: 2px;
+		--border-width: 2px;
+		--active-pressed-scale: 0.97;
+		--screen-xs: 480px;
+		--screen-sm: 640px;
+		--screen-md: 768px;
+		--screen-lg: 1024px;
+		--screen-xl: 1280px;
+		--screen-2xl: 1536px;
+		--duration-fast: 150ms;
+		--duration-fast-medium: 200ms;
+		--duration-faster-medium: 250ms;
+		--duration-medium: 300ms;
+		--duration-medium-slow: 350ms;
+		--duration-medium-slower: 400ms;
+		--duration-slow: 450ms;
+		--timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+
+		/* light base colors */
+		--background: 255, 255, 255;
+		--foreground: 0, 0, 0;
+		--mode-50: 20, 20, 20;
+		--mode-100: 25, 25, 25;
+		--mode-150: 38, 38, 38;
+		--mode-200: 51, 51, 51;
+		--mode-250: 64, 64, 64;
+		--mode-300: 76, 76, 76;
+		--mode-350: 89, 89, 89;
+		--mode-400: 102, 102, 102;
+		--mode-450: 115, 115, 115;
+		--mode-500: 127, 127, 127;
+		--mode-550: 140, 140, 140;
+		--mode-600: 153, 153, 153;
+		--mode-650: 166, 166, 166;
+		--mode-700: 178, 178, 178;
+		--mode-750: 191, 191, 191;
+		--mode-800: 204, 204, 204;
+		--mode-850: 217, 217, 217;
+		--mode-900: 230, 230, 230;
+		--mode-950: 245, 245, 245;
+		--mode: 255, 255, 255;
+		--mode-foreground: 0, 0, 0;
+		--mode-contrast: 10, 10, 10;
+		--mode-contrast-foreground: 255, 255, 255;
+		--mode-accent: 235, 235, 235;
+		--mode-accent-foreground: 10, 10, 10;
+		--mode-contrast-accent: 41, 41, 41;
+		--mode-contrast-accent-foreground: 255, 255, 255;
+		--neutral: 64, 64, 191;
+		--neutral-foreground: 10, 10, 10;
+		--ring-color: 38, 113, 145;
+		--primary: 38, 113, 145;
+		--primary-foreground: 250, 250, 250;
+		--secondary: 102, 51, 153;
+		--secondary-foreground: 250, 250, 250;
+		--destructive: 243, 18, 96;
+		--destructive-foreground: 250, 250, 250;
+		--success: 34 197 94;
+		--success-foreground: 10, 10, 10;
+		--warning: 255, 165, 0;
+		--warning-foreground: 10, 10, 10;
+	}
+
+	[data-mode="dark"] {
+		/* dark base colors */
+		--background: 10, 10, 10;
+		--foreground: 255, 255, 255;
+		--mode-50: 240, 240, 240;
+		--mode-100: 230, 230, 230;
+		--mode-150: 220, 220, 220;
+		--mode-200: 204, 204, 204;
+		--mode-250: 190, 190, 190;
+		--mode-300: 178, 178, 178;
+		--mode-350: 165, 165, 165;
+		--mode-400: 153, 153, 153;
+		--mode-450: 140, 140, 140;
+		--mode-500: 127, 127, 127;
+		--mode-550: 115, 115, 115;
+		--mode-600: 102, 102, 102;
+		--mode-650: 89, 89, 89;
+		--mode-700: 76, 76, 76;
+		--mode-750: 64, 64, 64;
+		--mode-800: 51, 51, 51;
+		--mode-850: 38, 38, 38;
+		--mode-900: 25, 25, 25;
+		--mode-950: 15, 15, 15;
+		--mode: 10, 10, 10;
+		--mode-foreground: 255, 255, 255;
+		--mode-contrast: 255, 255, 255;
+		--mode-contrast-foreground: 10, 10, 10;
+		--mode-accent: 41, 41, 41;
+		--mode-accent-foreground: 255, 255, 255;
+		--mode-contrast-accent: 235, 235, 235;
+		--mode-contrast-accent-foreground: 10, 10, 10;
+		--mode-accent-high: 64, 64, 64;
+		--mode-contrast-accent-high: 191, 191, 191;
+		--neutral: 87, 87, 87;
+		--neutral-foreground: 255, 255, 255;
+		--ring-color: 57, 144, 255;
+		--primary: 57, 144, 255;
+		--primary-foreground: 250, 250, 250;
+		--secondary: 163, 116, 249;
+		--secondary-foreground: 250, 250, 250;
+		--destructive: 243, 18, 96;
+		--destructive-foreground: 250, 250, 250;
+		--success: 44 162 77;
+		--success-foreground: 10, 10, 10;
+		--warning: 255, 165, 0;
+		--warning-foreground: 10, 10, 10;
+	}
+
+	/* global styling */
+
+	html[data-animation="disabled"] * {
+		animation-duration: 0ms !important;
+		transition-duration: 0ms !important;
+	}
+
+	::selection {
+		background: rgb(var(--primary));
+		color: rgb(var(--primary-foreground));
+	}
+
+	li {
+		list-style: none;
+		padding: 0;
+	}
+}

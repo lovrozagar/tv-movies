@@ -1,4 +1,4 @@
-import { useTimeout } from '@/hook/local'
+import { useTimeout } from '@/hooks/local'
 import { YOUTUBE_VIDEO_AUTOPLAY_PARAMS } from '@/modules/youtubeVideo/constants/youtubeVideo'
 import { getYoutubeVideoBaseUrl } from '@/modules/youtubeVideo/utils/getYoutubeVideoBaseUrl'
 import { useEffect, useState } from 'react'

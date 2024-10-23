@@ -1,5 +1,3 @@
-import '@/style/globals.css'
-
 import { App } from '@/app'
 
 import { StrictMode } from 'react'

@@ -1,4 +1,4 @@
-import { lazyMotionFeature } from '@/provider/lazyMotion/lazyMotionFeature'
+import { lazyMotionFeature } from '@/providers/lazyMotion/lazyMotionFeature'
 import { LazyMotion } from 'framer-motion'
 import type { ReactNode } from 'react'
 

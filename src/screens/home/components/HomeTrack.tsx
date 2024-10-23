@@ -1,7 +1,7 @@
 import { Skeleton } from '@/components/skeleton'
 import { PAGE_SIZE } from '@/constants'
-import { useCategoryMovieListInfiniteQuery } from '@/hook/query'
-import { getMergedCategoryMovieListPagesData } from '@/hook/query/useCategoryMovieListInfiniteQuery/getMergedCategoryMovieListPagesData'
+import { useCategoryMovieListInfiniteQuery } from '@/hooks/query'
+import { getMergedCategoryMovieListPagesData } from '@/hooks/query/useCategoryMovieListInfiniteQuery/getMergedCategoryMovieListPagesData'
 import { Track } from '@/modules/track'
 
 type HomeTrackProps = {

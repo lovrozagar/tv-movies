@@ -1,7 +1,7 @@
 import { lazy } from 'react'
 
 const LazySearchScreen = lazy(async () => {
-	const module = await import('@/screen/search/SearchScreen')
+	const module = await import('@/screens/search/SearchScreen')
 	return { default: module.SearchScreen }
 })
 

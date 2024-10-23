@@ -1,4 +1,4 @@
-import { useEventListener } from '@/hook/local'
+import { useEventListener } from '@/hooks/local'
 import { useLocation, useNavigate } from 'react-router-dom'
 
 function useBackNavigation() {

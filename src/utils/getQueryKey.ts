@@ -1,4 +1,4 @@
-import type { QueryKey } from '@/type'
+import type { QueryKey } from '@/types'
 
 /* type safe query key getter, development key safety without increasing the bundle size */
 

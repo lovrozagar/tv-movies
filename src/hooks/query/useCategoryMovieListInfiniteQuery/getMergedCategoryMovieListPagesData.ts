@@ -1,5 +1,5 @@
 import type { MovieItem, Page } from '@/api'
-import type { UseCategoryMovieListInfiniteQueryReturn } from '@/hook/query/useCategoryMovieListInfiniteQuery/useCategoryMovieListInfiniteQuery'
+import type { UseCategoryMovieListInfiniteQueryReturn } from '@/hooks/query/useCategoryMovieListInfiniteQuery/useCategoryMovieListInfiniteQuery'
 
 type GetMergedCategoryMovieListPagesDataProps = {
 	responseData: UseCategoryMovieListInfiniteQueryReturn['data']

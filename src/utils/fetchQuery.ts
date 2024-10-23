@@ -1,4 +1,4 @@
-import { FetchError } from '@/class'
+import { FetchError } from '@/classes'
 import { ENV } from '@/env'
 
 /* simple type safe fetch wrapper, good enough for this project... */

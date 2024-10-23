@@ -1,4 +1,4 @@
-import { useMediaQuery } from '@/hook/local/useMediaQuery/useMediaQuery'
+import { useMediaQuery } from '@/hooks/local/useMediaQuery/useMediaQuery'
 import { useCallback, useMemo } from 'react'
 
 function useMotion() {

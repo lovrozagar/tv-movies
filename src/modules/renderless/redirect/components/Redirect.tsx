@@ -1,4 +1,4 @@
-import type { NavigationPath } from '@/type'
+import type { NavigationPath } from '@/types'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 

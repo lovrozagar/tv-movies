@@ -1,4 +1,4 @@
-import '@/style/globals.css'
+import '@/styles/globals.css'
 
 import { Navbar } from '@/modules/navbar'
 import { LazyMotionProvider } from '@/providers'

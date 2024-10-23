@@ -1,5 +1,5 @@
 import { Image } from '@/components/image'
-import { useMotion } from '@/hook/local/useMotion/useMotion'
+import { useMotion } from '@/hooks/local/useMotion/useMotion'
 import { cn, getImageSource } from '@/utils'
 import { m } from 'framer-motion'
 
