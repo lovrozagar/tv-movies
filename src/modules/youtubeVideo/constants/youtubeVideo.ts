@@ -1,0 +1,3 @@
+const YOUTUBE_VIDEO_AUTOPLAY_PARAMS = '&autoplay=1&mute=1'
+
+export { YOUTUBE_VIDEO_AUTOPLAY_PARAMS }

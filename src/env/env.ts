@@ -1,4 +1,4 @@
-import { EnvError } from '@/class'
+import { EnvError } from '@/classes'
 
 const rawEnvVariables = [
 	{

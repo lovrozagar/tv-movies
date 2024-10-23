@@ -1,7 +1,7 @@
 import '@/style/globals.css'
 
-import { Navbar } from '@/module/navbar'
-import { LazyMotionProvider } from '@/provider'
+import { Navbar } from '@/modules/navbar'
+import { LazyMotionProvider } from '@/providers'
 import { Router } from '@/router'
 import { queryClient } from '@/utils'
 import { init } from '@noriginmedia/norigin-spatial-navigation'

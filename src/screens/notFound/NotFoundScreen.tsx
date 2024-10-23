@@ -1,12 +1,9 @@
 import { Button } from '@/modules/focusable'
 import { BackNavigator } from '@/modules/renderless'
+import { useNavigate } from 'react-router-dom'
 
-type ErrorProps = {
-	error: string
-}
-
-const Error = (props: ErrorProps) => {
-	const { error } = props
+const NotFoundScreen = () => {
+	const navigate = useNavigate()
 
 	return (
 		<>
@@ -14,16 +11,16 @@ const Error = (props: ErrorProps) => {
 
 			<main className='relative top-0 left-0 flex flex-1 items-center justify-center bg-background px-4'>
 				<div className='flex flex-col items-center'>
-					<h1 className='mb-4 font-bold text-4xl text-red-500'>An error ocurred</h1>
+					<h1 className='mb-4 font-bold text-4xl text-red-500'>Not found</h1>
 					<p className='mb-8 text-balance text-center font-roboto text-gray-900 text-lg lg:max-w-[600px] dark:text-gray-300'>
-						{error}
+						The page you are looking for does not exist, please go back.
 					</p>
 					<Button
 						autoFocus
 						className='h-[40px] w-[300px] rounded-lg bg-mode-900 text-mode-100'
-						onPress={() => window.location.reload()}
+						onPress={() => navigate(-1)}
 					>
-						Try again
+						Go back
 					</Button>
 				</div>
 			</main>
@@ -31,4 +28,4 @@ const Error = (props: ErrorProps) => {
 	)
 }
 
-export { Error }
+export { NotFoundScreen }

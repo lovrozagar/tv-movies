@@ -4,7 +4,7 @@ import { ENV } from '@/env'
 /* simple type safe fetch wrapper, good enough for this project... */
 /* ...no need to increase the bundle size with a third party package */
 
-type FetchQueryProps<T, K extends RequestInit = RequestInit> = {
+type FetchQueryProps<_T, K extends RequestInit = RequestInit> = {
 	path: string
 } & K
 
