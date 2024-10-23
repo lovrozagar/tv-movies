@@ -26,7 +26,8 @@
 			},
 			"recommended": true,
 			"suspicious": {
-				"noArrayIndexKey": "off"
+				"noArrayIndexKey": "off",
+				"noShadowRestrictedNames": "off"
 			}
 		}
 	},

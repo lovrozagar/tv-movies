@@ -17,7 +17,10 @@ pre-push:
     1_lint_check:
       glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
       run: bunx biome check --no-errors-on-unmatched --files-ignore-unknown=true {push_files}
-    2_build:
+    2_type_check:
+      glob: "*.{json,js,ts,tsx}"
+      run: bunx tsc --noEmit -p ./tsconfig.json
+    3_build:
       run: bunx vite build
-    3_bundlesize_check:
+    4_bundlesize_check:
       run: bunx bundlewatch --config bundlewatch.config.json
