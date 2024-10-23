@@ -28,6 +28,7 @@
 		"commitlint": "^19.4.0",
 		"globals": "^15.9.0",
 		"lefthook": "^1.7.12",
+		"localtunnel": "^2.0.2",
 		"npm-check-updates": "^16.14.20",
 		"postcss": "^8.4.47",
 		"tailwindcss": "^3.4.13",
@@ -53,7 +54,8 @@
 		"setup": "bunx lefthook install && chmod +x .lefthook/commit-msg/commitlint.sh && bun install",
 		"type:check": "tsc --noEmit",
 		"type:coverage": "typescript-coverage-report",
-		"update:check": "bun x npm-check-updates"
+		"update:check": "bunx npm-check-updates",
+		"localtunnel": "bunx localtunnel --port 3000 & node -e \"require('open')('https://loca.lt/mytunnelpassword')\""
 	},
 	"type": "module",
 	"version": "0.0.1"
