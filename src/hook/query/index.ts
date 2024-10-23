@@ -1,2 +1,8 @@
-export { useMovieDetailsQuery } from '@/hook/query/useMovieDetailsQuery/useMovieDetailsQuery'
-export { useCategoryMovieListQuery } from '@/hook/query/useCategoryMovieListQuery/useCategoryMovieListQuery'
+export {
+	useMovieDetailsQuery,
+	type UseMovieDetailsQueryReturn,
+} from '@/hook/query/useMovieDetailsQuery/useMovieDetailsQuery'
+export {
+	useCategoryMovieListInfiniteQuery,
+	type UseCategoryMovieListInfiniteQueryReturn,
+} from '@/hook/query/useCategoryMovieListInfiniteQuery/useCategoryMovieListInfiniteQuery'

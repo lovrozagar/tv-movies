@@ -19,4 +19,6 @@ function useMovieDetailsQuery(props: UseMovieDetailsQueryProps) {
 	})
 }
 
-export { useMovieDetailsQuery }
+type UseMovieDetailsQueryReturn = ReturnType<typeof useMovieDetailsQuery>
+
+export { useMovieDetailsQuery, type UseMovieDetailsQueryReturn }

@@ -2,11 +2,11 @@ import type { MovieItem, Page } from '@/api'
 import { fetchQuery, getApiPath, getQueryKey } from '@/utils'
 import { useInfiniteQuery } from '@tanstack/react-query'
 
-type UseCategoryMovieListQueryProps = {
+type UseCategoryMovieListInfiniteQueryProps = {
 	genreId: number
 }
 
-function useCategoryMovieListQuery(props: UseCategoryMovieListQueryProps) {
+function useCategoryMovieListInfiniteQuery(props: UseCategoryMovieListInfiniteQueryProps) {
 	const { genreId } = props
 
 	return useInfiniteQuery({
@@ -25,4 +25,6 @@ function useCategoryMovieListQuery(props: UseCategoryMovieListQueryProps) {
 	})
 }
 
-export { useCategoryMovieListQuery }
+type UseCategoryMovieListInfiniteQueryReturn = ReturnType<typeof useCategoryMovieListInfiniteQuery>
+
+export { useCategoryMovieListInfiniteQuery, type UseCategoryMovieListInfiniteQueryReturn }
