@@ -4,6 +4,15 @@ const config: Config = {
 	darkMode: ['selector', '[data-mode="dark"]'],
 	content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
 	theme: {
+		screens: {
+			'2xs': '370px',
+			'xs': '480px',
+			'sm': '640px',
+			'md': '768px',
+			'lg': '1024px',
+			'xl': '1280px',
+			'2xl': '1536px',
+		},
 		extend: {
 			colors: {
 				'mode-50': 'rgba(var(--mode-50))',
@@ -51,13 +60,19 @@ const config: Config = {
 				'brand-foreground': 'rgba(var(--brand-foreground))',
 				'muted': 'rgba(var(--muted))',
 				'muted-foreground': 'rgba(var(--muted-foreground))',
-				'white': 'rgba(var(--white))',
-				'white-foreground': 'rgba(var(--white-foreground))',
-				'black': 'rgba(var(--black))',
-				'black-foreground': 'rgba(var(--black-foreground))',
 				'background': 'rgba(var(--background))',
 				'foreground': 'rgba(var(--foreground))',
 				'ring-color': 'rgba(var(--ring-color))',
+			},
+			keyframes: {
+				'slide': {
+					'0%': {
+						transform: 'translateX(-100%)',
+					},
+					'100%': {
+						transform: 'translateX(100%)',
+					},
+				},
 			},
 		},
 	},
