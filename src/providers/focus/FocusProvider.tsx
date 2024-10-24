@@ -1,25 +1,27 @@
 import { FocusContext, useFocusable } from '@noriginmedia/norigin-spatial-navigation'
-import { type ReactNode, useEffect, useId } from 'react'
+import { type ReactNode, useEffect } from 'react'
 
 type FocusProviderProps = {
 	/* biome-ignore lint/suspicious/noExplicitAny: allow maximally generic ref */
 	children: (props: { ref: React.RefObject<any> }) => ReactNode
-	autofocus?: boolean
 }
 
 const FocusProvider = (props: FocusProviderProps) => {
-	const { children, autofocus = false } = props
+	const { children } = props
 
-	const id = useId()
+	const { ref, focusKey, hasFocusedChild, focusSelf } = useFocusable({
+		autoRestoreFocus: true,
+		isFocusBoundary: true,
+		focusable: true,
+		forceFocus: true,
+	})
 
-	const { ref, focusKey, focusSelf } = useFocusable({ focusKey: id })
-
-	/* focus navbar initially */
 	useEffect(() => {
-		if (!autofocus) return
+		if (hasFocusedChild) return
 
+		/* if no focus child found in the tree, focus self to focus first focusable */
 		focusSelf()
-	}, [autofocus, focusSelf])
+	}, [hasFocusedChild, focusSelf])
 
 	return <FocusContext.Provider value={focusKey}>{children({ ref })}</FocusContext.Provider>
 }
