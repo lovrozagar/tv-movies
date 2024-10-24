@@ -1,10 +1,10 @@
-import { BackNavigator } from '@/modules/renderless'
+import { Main } from '@/components/main'
 
 const PlayerScreen = () => {
 	return (
-		<>
-			<BackNavigator />
-		</>
+		<Main>
+			<div />
+		</Main>
 	)
 }
 
