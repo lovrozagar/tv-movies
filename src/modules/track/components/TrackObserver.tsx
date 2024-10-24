@@ -1,13 +1,15 @@
+import { cn } from '@/utils'
 import { type ReactNode, useLayoutEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 
 type TrackObserverProps = {
-	children: ReactNode
 	enabled: boolean
+	children: ReactNode
+	className?: string
 }
 
 const TrackObserver = (props: TrackObserverProps) => {
-	const { children, enabled } = props
+	const { enabled, children, className } = props
 
 	const observer = useInView({ skip: !enabled })
 
@@ -20,7 +22,7 @@ const TrackObserver = (props: TrackObserverProps) => {
 	}, [observer.inView])
 
 	return (
-		<div ref={observer.ref} className='min-h-[411px]'>
+		<div ref={observer.ref} className={cn('min-h-[411px]', className)}>
 			{shouldRenderChildren ? children : null}
 		</div>
 	)
