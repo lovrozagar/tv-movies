@@ -1,7 +1,10 @@
 import { Container } from '@/components/container'
-import { ReactIcon, TmdbIcon, VercelIcon } from '@/components/icon'
-import { getNavigationPath } from '@/utils'
-import { Link } from 'react-router-dom'
+import { FooterLink } from '@/modules/footer/components/FooterLink'
+import {
+	FOOTER_QUICK_LINK_ITEMS,
+	FOOTER_SPECIAL_THANKS_LINK_ITEMS,
+	FOOTER_SUPPORT_LINK_ITEMS,
+} from '@/modules/footer/constants/footerLinkItems'
 
 const Footer = () => {
 	return (
@@ -17,56 +20,35 @@ const Footer = () => {
 					<div>
 						<h3 className='mb-4 font-semibold'>Quick Links</h3>
 						<ul className='space-y-2 text-sm'>
-							<li>
-								<Link to={getNavigationPath('/')}>Home</Link>
-							</li>
-							<li>
-								<Link to={getNavigationPath('/trending')}>Trending</Link>
-							</li>
-							<li>
-								<Link to={getNavigationPath('/')}>Watch later</Link>
-							</li>
+							{FOOTER_QUICK_LINK_ITEMS.map((item) => (
+								<li key={item.href}>
+									<FooterLink to={item.href}>{item.name}</FooterLink>
+								</li>
+							))}
 						</ul>
 					</div>
 					<div>
 						<h3 className='mb-4 font-semibold'>Support (maintenance)</h3>
 						<ul className='space-y-2 text-sm'>
-							<li className='cursor-not-allowed'>FAQ</li>
-							<li className='cursor-not-allowed'>Contact Us</li>
-							<li className='cursor-not-allowed'>Terms of Service</li>
+							{FOOTER_SUPPORT_LINK_ITEMS.map((item) => (
+								<li key={item}>
+									<FooterLink to={'/'}>{item}</FooterLink>
+								</li>
+							))}
 						</ul>
 					</div>
 					<div>
 						<h3 className='mb-4 font-semibold'>Special Thanks</h3>
-						<div className='flex flex-col space-y-2 text-sm'>
-							<a
-								href='https://react.dev/'
-								className='flex items-center gap-x-3'
-								rel='noopener noreferrer'
-								target='_blank'
-							>
-								React
-								<ReactIcon className='size-6' />
-							</a>
-							<a
-								href='https://react.dev/'
-								className='flex items-center gap-x-3'
-								rel='noopener noreferrer'
-								target='_blank'
-							>
-								Vercel
-								<VercelIcon className='size-6' />
-							</a>
-							<a
-								href='https://vercel.com/'
-								className='flex items-center gap-x-3'
-								rel='noopener noreferrer'
-								target='_blank'
-							>
-								TMDB
-								<TmdbIcon className='size-6' />
-							</a>
-						</div>
+						<ul className='flex flex-col space-y-2 text-sm'>
+							{FOOTER_SPECIAL_THANKS_LINK_ITEMS.map((item) => (
+								<li key={item.href}>
+									<FooterLink to={item.href}>
+										<span>{item.name}</span>
+										<item.Icon className='size-6' />
+									</FooterLink>
+								</li>
+							))}
+						</ul>
 					</div>
 				</div>
 			</Container>
