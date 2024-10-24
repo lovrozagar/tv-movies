@@ -1,20 +1,21 @@
+import { BookmarkFilledIcon, BookmarkIcon } from '@/components/icon'
 import { useMotion } from '@/hooks/local'
 import type { UseMovieDetailsQueryReturn } from '@/hooks/query'
 import { Button } from '@/modules/focusable'
+import { WatchLaterButton } from '@/modules/watchLater'
 import { Cast } from '@/screens/details/component/Cast'
 import { Genre } from '@/screens/details/component/Genre'
 import { PlayNowLink } from '@/screens/details/component/PlayNowLink'
-import { WatchLaterButton } from '@/screens/details/component/WatchLaterButton'
 import { cn } from '@/utils'
 import { m } from 'framer-motion'
 import { useState } from 'react'
 
-type InfoSectionProps = {
+type DetailsProps = {
 	movieId: number
 	responseData: UseMovieDetailsQueryReturn['data']
 }
 
-const InfoSection = (props: InfoSectionProps) => {
+const Details = (props: DetailsProps) => {
 	const { movieId, responseData } = props
 
 	const { fadeDown, staggerContainer } = useMotion()
@@ -24,7 +25,7 @@ const InfoSection = (props: InfoSectionProps) => {
 	const toggleShow = () => setShow((prev) => !prev)
 
 	return (
-		<m.section
+		<m.div
 			variants={staggerContainer(0.2, 0.4)}
 			initial='hidden'
 			animate='show'
@@ -71,11 +72,22 @@ const InfoSection = (props: InfoSectionProps) => {
 
 				<div className='mt-8 flex xs:flex-row flex-col xs:items-center xs:justify-center'>
 					<PlayNowLink movieId={movieId} />
-					<WatchLaterButton movieId={movieId} />
+					<WatchLaterButton movieId={movieId}>
+						{({ isSaved }) => (
+							<>
+								{isSaved ? 'Saved' : 'Watch later'}
+								{isSaved ? (
+									<BookmarkFilledIcon className='size-5' />
+								) : (
+									<BookmarkIcon className='size-5' />
+								)}
+							</>
+						)}
+					</WatchLaterButton>
 				</div>
 			</div>
-		</m.section>
+		</m.div>
 	)
 }
 
-export { InfoSection }
+export { Details }

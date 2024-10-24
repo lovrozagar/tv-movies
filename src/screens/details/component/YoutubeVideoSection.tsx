@@ -8,8 +8,12 @@ type YoutubeVideoSectionProps = {
 const YoutubeVideoSection = (props: YoutubeVideoSectionProps) => {
 	const { videos } = props
 
-	if (!videos) return null
+	/* do not render the section if there are no videos */
+	if (!videos || videos.length === 0) {
+		return null
+	}
 
+	/* get first two videos */
 	const youtubeVideos = videos.slice(0, 2)
 
 	return (
