@@ -1,0 +1,3 @@
+const NAVBAR_ITEM_BASE_CLASSNAME = 'px-4 py-2'
+
+export { NAVBAR_ITEM_BASE_CLASSNAME }

@@ -1,6 +1,7 @@
 import { MoonIcon, SunIcon } from '@/components/icon'
 import { useMutationObserver } from '@/hooks/local'
 import { Button } from '@/modules/focusable'
+import type { ButtonProps } from '@/modules/focusable/components/Button'
 import { DOCUMENT_MODE_ATTRIBUTE_KEY } from '@/modules/navbar/constant/mode'
 import type { Mode } from '@/modules/navbar/type/mode'
 import {
@@ -12,7 +13,11 @@ import {
 } from '@/modules/navbar/util/mode'
 import { useLayoutEffect, useState } from 'react'
 
-const ModeSwitch = () => {
+type ModeSwitchProps = Pick<ButtonProps, 'disabledArrows'>
+
+const ModeSwitch = (props: ModeSwitchProps) => {
+	const { disabledArrows } = props
+
 	/* initially read local document mode, if exists sync to state, else return system preference */
 	const [mode, setMode] = useState<Mode>(() => {
 		const localMode = getLocalDocumentMode()
@@ -44,7 +49,7 @@ const ModeSwitch = () => {
 	})
 
 	return (
-		<Button onPress={toggleDocumentMode}>
+		<Button className='px-4 py-2' disabledArrows={disabledArrows} onPress={toggleDocumentMode}>
 			{mode === 'light' ? <MoonIcon className='size-6' /> : <SunIcon className='size-6' />}
 		</Button>
 	)
