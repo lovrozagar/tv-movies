@@ -7,27 +7,26 @@ import { cn } from '@/utils'
 import { Link as RouterLink, type LinkProps as RouterLinkProps } from 'react-router-dom'
 
 /* foward button props, use onPress as isomorphic press handler between different inputs */
-type LinkProps = RouterLinkProps & UseSpatialNavigationProps
+type LinkProps = RouterLinkProps & Partial<Omit<UseSpatialNavigationProps, 'type'>>
 
 const Link = (props: LinkProps) => {
 	const {
-		className,
 		onPress,
 		onFocus,
+		className,
 		autoFocus = false,
-		upArrow = true,
-		rightArrow = true,
-		downArrow = true,
-		leftArrow = true,
+		scrollable = false,
+		disabledArrows = [],
 		...restProps
 	} = props
 
 	const focusable = useSpatialNavigation({
+		type: 'link',
 		autoFocus,
-		upArrow,
-		rightArrow,
-		downArrow,
-		leftArrow,
+		disabledArrows,
+		scrollable,
+		onPress,
+		onFocus,
 	})
 
 	return (
@@ -42,4 +41,4 @@ const Link = (props: LinkProps) => {
 	)
 }
 
-export { Link }
+export { Link, type LinkProps }

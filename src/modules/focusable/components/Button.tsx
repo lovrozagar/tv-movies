@@ -7,32 +7,32 @@ import { cn } from '@/utils'
 import type { ComponentPropsWithoutRef } from 'react'
 
 /* foward button props, use onPress as isomorphic press handler between different inputs */
-type ButtonProps = ComponentPropsWithoutRef<'button'> & UseSpatialNavigationProps
+type ButtonProps = ComponentPropsWithoutRef<'button'> &
+	Partial<Omit<UseSpatialNavigationProps, 'type'>>
 
 const Button = (props: ButtonProps) => {
 	const {
-		className,
 		onPress,
 		onFocus,
+		className,
+		scrollable = false,
 		autoFocus = false,
-		upArrow = true,
-		rightArrow = true,
-		downArrow = true,
-		leftArrow = true,
+		disabledArrows = [],
 		...restProps
 	} = props
 
 	const focusable = useSpatialNavigation({
+		type: 'button',
 		autoFocus,
-		upArrow,
-		rightArrow,
-		downArrow,
-		leftArrow,
+		disabledArrows,
+		scrollable,
+		onPress,
+		onFocus,
 	})
 
 	return (
 		<button
-			type='submit'
+			type='button'
 			ref={focusable.ref}
 			data-focused={focusable.focused}
 			onClick={onPress}
@@ -43,4 +43,4 @@ const Button = (props: ButtonProps) => {
 	)
 }
 
-export { Button }
+export { Button, type ButtonProps }

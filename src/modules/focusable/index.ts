@@ -1,2 +1,2 @@
-export { Button } from '@/modules/focusable/components/Button'
-export { Link } from '@/modules/focusable/components/Link'
+export { Button, type ButtonProps } from '@/modules/focusable/components/Button'
+export { Link, type LinkProps } from '@/modules/focusable/components/Link'
