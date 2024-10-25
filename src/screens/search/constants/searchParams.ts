@@ -1,0 +1,3 @@
+const SEARCH_QUERY_PARAM_KEY = "query"
+
+export { SEARCH_QUERY_PARAM_KEY }
