@@ -7,26 +7,26 @@ pre-commit:
   commands:
     1_format_write:
       glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
-      run: bunx biome format --write --no-errors-on-unmatched --files-ignore-unknown=true {staged_files} && git update-index --again
+      run: npx biome format --write --no-errors-on-unmatched --files-ignore-unknown=true {staged_files} && git update-index --again
     2_lint_check:
       glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
-      run: bunx biome check --write --no-errors-on-unmatched --files-ignore-unknown=true {staged_files} && git update-index --again
+      run: npx biome check --write --no-errors-on-unmatched --files-ignore-unknown=true {staged_files} && git update-index --again
     3_type_check:
       glob: "*.{json,js,ts,tsx}"
-      run: bunx tsc --noEmit -p ./tsconfig.json
+      run: npx tsc --noEmit -p ./tsconfig.json
 
 pre-push:
   commands:
     1_format_write:
       glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
-      run: bunx biome format --write --no-errors-on-unmatched --files-ignore-unknown=true {staged_files} && git update-index --again
+      run: npx biome format --write --no-errors-on-unmatched --files-ignore-unknown=true {staged_files} && git update-index --again
     2_lint_check:
       glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
-      run: bunx biome check --no-errors-on-unmatched --files-ignore-unknown=true {push_files}
+      run: npx biome check --no-errors-on-unmatched --files-ignore-unknown=true {push_files}
     3_type_check:
       glob: "*.{json,js,ts,tsx}"
-      run: bunx tsc --noEmit -p ./tsconfig.json
+      run: npx tsc --noEmit -p ./tsconfig.json
     4_build:
-      run: bunx vite build
+      run: npx vite build
     4_bundlesize_check:
-      run: bunx bundlewatch --config bundlewatch.config.json
+      run: npx bundlewatch --config bundlewatch.config.json

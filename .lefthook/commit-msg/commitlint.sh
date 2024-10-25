@@ -3,4 +3,4 @@
 #!/bin/bash
 
 # Print the commit message
-echo $(head -n1 "$1") | bunx commitlint --color
+echo $(head -n1 "$1") | npx commitlint --color
