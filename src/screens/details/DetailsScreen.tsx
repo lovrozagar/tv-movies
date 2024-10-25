@@ -1,58 +1,68 @@
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from "react-router-dom"
 
-import { Error } from '@/components/error'
-import { Loader } from '@/components/loader'
-import { Main } from '@/components/main'
-import { useDocumentTitle } from '@/hooks/local'
-import { useMovieDetailsQuery } from '@/hooks/query'
-import { Track } from '@/modules/track'
-import { DetailsSection } from '@/screens/details/component/DetailsSection'
-import { RecommendationsSection } from '@/screens/details/component/RecommendationsSection'
-import { YoutubeVideoSection } from '@/screens/details/component/YoutubeVideoSection'
+import { Error } from "@/components/error"
+import { Loader } from "@/components/loader"
+import { Main } from "@/components/main"
+import { useDocumentTitle } from "@/hooks/local"
+import { useMovieDetailsQuery } from "@/hooks/query"
+import { Backdrop } from "@/modules/backdrop"
+import { Redirect } from "@/modules/renderless"
+import { Track } from "@/modules/track"
+import { DetailsSection } from "@/screens/details/components/DetailsSection"
+import { RecommendationsSection } from "@/screens/details/components/RecommendationsSection"
+import { YoutubeVideoSection } from "@/screens/details/components/YoutubeVideoSection"
+import { getImageSource } from "@/utils"
 
 const DetailsScreen = () => {
-	const { movieIdParam = '' } = useParams()
+  const { movieIdParam = "" } = useParams()
 
-	const movieId = Number.parseInt(movieIdParam)
+  const movieId = Number.parseInt(movieIdParam)
 
-	const response = useMovieDetailsQuery({ movieId })
+  const response = useMovieDetailsQuery({ movieId })
 
-	useDocumentTitle({
-		title: response.data ? response.data.title : undefined,
-	})
+  console.log("details", response.data)
 
-	const navigate = useNavigate()
+  useDocumentTitle({
+    title: response.data ? response.data.title : undefined,
+  })
 
-	if (!movieId) {
-		navigate('/')
+  if (!movieId) {
+    return <Redirect path="/" />
+  }
 
-		return null
-	}
+  if (response.isLoading || response.isFetching) {
+    return <Loader />
+  }
 
-	if (response.isLoading || response.isFetching) {
-		return <Loader />
-	}
+  if (response.isError) {
+    return (
+      <Error error="Failed to load movie details. Please check your connection and try again." />
+    )
+  }
 
-	if (response.isError) {
-		return (
-			<Error error='Failed to load movie details. Please check your connection and try again.' />
-		)
-	}
+  return (
+    <Main className="px-0 md:px-0 lg:px-0">
+      <Backdrop className="flex h-[600px] flex-col">
+        <Backdrop.Image
+          imageUrl={getImageSource({ path: response.data?.poster_path ?? "", size: "original" })}
+        />
+        <Backdrop.Mask />
 
-	return (
-		<Main>
-			{/* details section - poster and information */}
-			<DetailsSection movieId={movieId} responseData={response.data} />
+        <Backdrop.FrontContent className="flex flex-1 flex-col">
+          {/* details section - poster and information */}
+          <DetailsSection movieId={movieId} responseData={response.data} />
+        </Backdrop.FrontContent>
+      </Backdrop>
 
-			{/* youtube videos (2 max) */}
-			<YoutubeVideoSection videos={response.data?.videos.results} />
+      {/* youtube videos (2 max) */}
+      <YoutubeVideoSection videos={response.data?.videos.results} />
 
-			{/* recommended similar movies track */}
-			<Track.Observer enabled className='min-h-0'>
-				<RecommendationsSection movieId={movieId} />
-			</Track.Observer>
-		</Main>
-	)
+      {/* recommended similar movies track */}
+      <Track.Observer enabled className="min-h-0">
+        <RecommendationsSection movieId={movieId} />
+      </Track.Observer>
+    </Main>
+  )
 }
 
 export { DetailsScreen }

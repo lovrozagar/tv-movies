@@ -1,28 +1,28 @@
-import { useEventListener } from '@/hooks/local'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useEventListener } from "@/hooks/local"
+import { useLocation, useNavigate } from "react-router-dom"
 
 function useBackNavigation() {
-	const navigate = useNavigate()
-	const location = useLocation()
+  const navigate = useNavigate()
+  const location = useLocation()
 
-	useEventListener({
-		event: 'keydown',
-		handler: (event: KeyboardEvent) => {
-			const activeElement = document.activeElement
+  useEventListener({
+    event: "keydown",
+    handler: (event: KeyboardEvent) => {
+      const activeElement = document.activeElement
 
-			const isInputFocused =
-				activeElement instanceof HTMLInputElement || activeElement instanceof HTMLTextAreaElement
+      const isInputFocused =
+        activeElement instanceof HTMLInputElement || activeElement instanceof HTMLTextAreaElement
 
-			if (isInputFocused) return
+      if (isInputFocused) return
 
-			if (location.pathname === '/') return
+      if (location.pathname === "/") return
 
-			if (event.key === 'Backspace' || event.key === 'SoftLeft') {
-				event.preventDefault()
-				navigate(-1)
-			}
-		},
-	})
+      if (event.key === "Backspace" || event.key === "SoftLeft" || event.key === "Escape") {
+        event.preventDefault()
+        navigate(-1)
+      }
+    },
+  })
 }
 
 export { useBackNavigation }

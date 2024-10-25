@@ -1,1 +1,1 @@
-export { Navbar } from '@/modules/navbar/component/NavbarRoot'
+export { Navbar } from "@/modules/navbar/component/Navbar"

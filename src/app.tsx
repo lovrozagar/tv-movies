@@ -1,9 +1,9 @@
-import '@/styles/globals.css'
+import "@/styles/globals.css"
 
-import { Router } from '@/router'
+import { Router } from "@/router"
 
 function App() {
-	return <Router />
+  return <Router />
 }
 
 export { App }

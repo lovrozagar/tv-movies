@@ -1,7 +1,7 @@
-import type { NavigationPath } from '@/types'
+import type { NavigationPath } from "@/types"
 
 function getNavigationPath(path: NavigationPath) {
-	return path
+  return path
 }
 
 export { getNavigationPath }

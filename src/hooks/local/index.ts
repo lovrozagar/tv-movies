@@ -1,7 +1,8 @@
-export { useDocumentTitle } from '@/hooks/local/useDocumentTitle/useDocumentTitle'
-export { useEventListener } from '@/hooks/local/useEventListener/useEventListener'
-export { useFreshRef } from '@/hooks/local/useFreshRef/useFreshRef'
-export { useMediaQuery } from '@/hooks/local/useMediaQuery/useMediaQuery'
-export { useMotion } from '@/hooks/local/useMotion/useMotion'
-export { useMutationObserver } from '@/hooks/local/useMutationObserver/useMutationObserver'
-export { useTimeout } from '@/hooks/local/useTimeout/useTimeout'
+export { useDocumentTitle } from "@/hooks/local/useDocumentTitle/useDocumentTitle"
+export { useEventListener } from "@/hooks/local/useEventListener/useEventListener"
+export { useFreshRef } from "@/hooks/local/useFreshRef/useFreshRef"
+export { useMediaQuery } from "@/hooks/local/useMediaQuery/useMediaQuery"
+export { useMotion } from "@/hooks/local/useMotion/useMotion"
+export { useMutationObserver } from "@/hooks/local/useMutationObserver/useMutationObserver"
+export { useTimeout } from "@/hooks/local/useTimeout/useTimeout"
+export { useDebounce } from "@/hooks/local/useDebounce/useDebounce"

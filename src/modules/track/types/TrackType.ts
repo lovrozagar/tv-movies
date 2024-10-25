@@ -1,3 +1,3 @@
-type TrackType = 'row' | 'wrap'
+type TrackType = "row" | "wrap"
 
 export type { TrackType }

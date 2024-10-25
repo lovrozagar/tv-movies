@@ -1,15 +1,15 @@
-import { lazyMotionFeature } from '@/providers/lazyMotion/lazyMotionFeature'
-import { LazyMotion } from 'framer-motion'
-import type { ReactNode } from 'react'
+import { lazyMotionFeature } from "@/providers/lazyMotion/lazyMotionFeature"
+import { LazyMotion } from "framer-motion"
+import type { ReactNode } from "react"
 
 type LazyMotionProviderProps = {
-	children: ReactNode
+  children: ReactNode
 }
 
 const LazyMotionProvider = (props: LazyMotionProviderProps) => {
-	const { children } = props
+  const { children } = props
 
-	return <LazyMotion features={lazyMotionFeature}>{children}</LazyMotion>
+  return <LazyMotion features={lazyMotionFeature}>{children}</LazyMotion>
 }
 
 export { LazyMotionProvider }

@@ -1,3 +1,3 @@
-type Mode = 'light' | 'dark'
+type Mode = "light" | "dark"
 
 export type { Mode }

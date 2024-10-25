@@ -1,8 +1,8 @@
-import { TrackHeading } from '@/modules/track/components/TrackHeading'
-import { TrackList } from '@/modules/track/components/TrackList'
-import { TrackListItem } from '@/modules/track/components/TrackListItem'
-import { TrackObserver } from '@/modules/track/components/TrackObserver'
-import { TrackSection } from '@/modules/track/components/TrackSection'
+import { TrackHeading } from "@/modules/track/components/TrackHeading"
+import { TrackList } from "@/modules/track/components/TrackList"
+import { TrackListItem } from "@/modules/track/components/TrackListItem"
+import { TrackObserver } from "@/modules/track/components/TrackObserver"
+import { TrackSection } from "@/modules/track/components/TrackSection"
 
 const Track = () => <></>
 

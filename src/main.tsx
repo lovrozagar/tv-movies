@@ -1,14 +1,14 @@
-import { App } from '@/app'
+import { App } from "@/app"
 
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { StrictMode } from "react"
+import { createRoot } from "react-dom/client"
 
-const root = document.getElementById('root')
+const root = document.getElementById("root")
 
 if (root instanceof HTMLElement) {
-	createRoot(root).render(
-		<StrictMode>
-			<App />
-		</StrictMode>,
-	)
+  createRoot(root).render(
+    <StrictMode>
+      <App />
+    </StrictMode>,
+  )
 }

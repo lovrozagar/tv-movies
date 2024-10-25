@@ -1,1 +1,1 @@
-export { YoutubeVideo } from '@/modules/youtubeVideo/components/YoutubeVideo'
+export { YoutubeVideo } from "@/modules/youtubeVideo/components/YoutubeVideo"

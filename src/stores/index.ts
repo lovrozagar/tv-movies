@@ -1,4 +1,4 @@
 export {
-	useWatchLaterStore,
-	type WatchLaterStore,
-} from '@/stores/watchLater/watchLaterStore'
+  useWatchLaterStore,
+  type WatchLaterStore,
+} from "@/stores/watchLater/watchLaterStore"

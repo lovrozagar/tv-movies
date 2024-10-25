@@ -1,30 +1,30 @@
-import { useFreshRef } from '@/hooks/local/useFreshRef/useFreshRef'
-import { useEffect } from 'react'
+import { useFreshRef } from "@/hooks/local/useFreshRef/useFreshRef"
+import { useEffect } from "react"
 
 type UseMutationObserverProps<T extends HTMLElement> = {
-	node: T | null
-	callback: MutationCallback
-	options: MutationObserverInit
+  node: T | null
+  callback: MutationCallback
+  options: MutationObserverInit
 }
 
 function useMutationObserver<T extends HTMLElement>(props: UseMutationObserverProps<T>) {
-	const { node, callback, options } = props
+  const { node, callback, options } = props
 
-	const freshCallback = useFreshRef(callback)
-	const freshOptions = useFreshRef(options)
+  const freshCallback = useFreshRef(callback)
+  const freshOptions = useFreshRef(options)
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
-	useEffect(() => {
-		if (!node) return undefined
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+  useEffect(() => {
+    if (!node) return undefined
 
-		const observer = new MutationObserver(freshCallback.current)
+    const observer = new MutationObserver(freshCallback.current)
 
-		observer.observe(node, freshOptions.current)
+    observer.observe(node, freshOptions.current)
 
-		return () => {
-			observer.disconnect()
-		}
-	}, [node])
+    return () => {
+      observer.disconnect()
+    }
+  }, [node])
 }
 
 export { useMutationObserver }

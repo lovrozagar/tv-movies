@@ -1,63 +1,63 @@
 import {
-	DEFAULT_DOCUMENT_MODE,
-	DOCUMENT_MODE_ATTRIBUTE_KEY,
-	DOCUMENT_MODE_LOCAL_STORAGE_KEY,
-} from '@/modules/navbar/constant/mode'
-import type { Mode } from '@/modules/navbar/type/mode'
+  DEFAULT_DOCUMENT_MODE,
+  DOCUMENT_MODE_ATTRIBUTE_KEY,
+  DOCUMENT_MODE_LOCAL_STORAGE_KEY,
+} from "@/modules/navbar/constant/mode"
+import type { Mode } from "@/modules/navbar/type/mode"
 
 function getDocumentMode(): Mode {
-	const documentMode = window.document.documentElement.getAttribute(DOCUMENT_MODE_ATTRIBUTE_KEY)
+  const documentMode = window.document.documentElement.getAttribute(DOCUMENT_MODE_ATTRIBUTE_KEY)
 
-	return documentMode === 'dark' ? 'dark' : 'light'
+  return documentMode === "dark" ? "dark" : "light"
 }
 
 function getToggledDocumentMode(input: string | null) {
-	if (input === 'dark') return 'light'
-	if (input === 'light') return 'dark'
+  if (input === "dark") return "light"
+  if (input === "light") return "dark"
 
-	return DEFAULT_DOCUMENT_MODE
+  return DEFAULT_DOCUMENT_MODE
 }
 
 function toggleDocumentMode() {
-	const documentMode = window.document.documentElement.getAttribute(DOCUMENT_MODE_ATTRIBUTE_KEY)
+  const documentMode = window.document.documentElement.getAttribute(DOCUMENT_MODE_ATTRIBUTE_KEY)
 
-	const toggledDocumentMode = getToggledDocumentMode(documentMode)
+  const toggledDocumentMode = getToggledDocumentMode(documentMode)
 
-	window.document.documentElement.setAttribute(DOCUMENT_MODE_ATTRIBUTE_KEY, toggledDocumentMode)
+  window.document.documentElement.setAttribute(DOCUMENT_MODE_ATTRIBUTE_KEY, toggledDocumentMode)
 }
 
 function setDocumentMode(mode: Mode) {
-	window.document.documentElement.setAttribute(DOCUMENT_MODE_ATTRIBUTE_KEY, mode)
+  window.document.documentElement.setAttribute(DOCUMENT_MODE_ATTRIBUTE_KEY, mode)
 }
 
 function getLocalDocumentMode(): Mode | undefined {
-	try {
-		/* JSON.parse can throw, handle error */
-		const localStorageDocumentMode = JSON.parse(
-			window.localStorage.getItem(DOCUMENT_MODE_LOCAL_STORAGE_KEY) ?? '',
-		)
+  try {
+    /* JSON.parse can throw, handle error */
+    const localStorageDocumentMode = JSON.parse(
+      window.localStorage.getItem(DOCUMENT_MODE_LOCAL_STORAGE_KEY) ?? "",
+    )
 
-		if (
-			!localStorageDocumentMode ||
-			(localStorageDocumentMode !== 'light' && localStorageDocumentMode !== 'dark')
-		)
-			return undefined
+    if (
+      !localStorageDocumentMode ||
+      (localStorageDocumentMode !== "light" && localStorageDocumentMode !== "dark")
+    )
+      return undefined
 
-		return localStorageDocumentMode
-	} catch {
-		return undefined
-	}
+    return localStorageDocumentMode
+  } catch {
+    return undefined
+  }
 }
 
 function setLocalDocumentMode(mode: Mode) {
-	window.localStorage.setItem(DOCUMENT_MODE_LOCAL_STORAGE_KEY, JSON.stringify(mode))
+  window.localStorage.setItem(DOCUMENT_MODE_LOCAL_STORAGE_KEY, JSON.stringify(mode))
 }
 
 export {
-	getDocumentMode,
-	getToggledDocumentMode,
-	getLocalDocumentMode,
-	setDocumentMode,
-	setLocalDocumentMode,
-	toggleDocumentMode,
+  getDocumentMode,
+  getToggledDocumentMode,
+  getLocalDocumentMode,
+  setDocumentMode,
+  setLocalDocumentMode,
+  toggleDocumentMode,
 }

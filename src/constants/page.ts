@@ -1,3 +1,5 @@
+const INITIAL_PAGE = 1
+
 const PAGE_SIZE = 20
 
-export { PAGE_SIZE }
+export { INITIAL_PAGE, PAGE_SIZE }

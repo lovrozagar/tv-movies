@@ -1,9 +1,9 @@
-import { useBackNavigation } from '@/modules/renderless/BackNavigator/hooks/useBackNavigation'
+import { useBackNavigation } from "@/modules/renderless/backNavigator/hooks/useBackNavigation"
 
 const BackNavigator = () => {
-	useBackNavigation()
+  useBackNavigation()
 
-	return null
+  return null
 }
 
 export { BackNavigator }

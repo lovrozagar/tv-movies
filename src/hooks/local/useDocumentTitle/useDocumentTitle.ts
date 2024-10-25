@@ -1,22 +1,22 @@
-import { BASE_DOCUMENT_TITLE } from '@/constants'
-import { useEffect } from 'react'
+import { ENV } from "@/env"
+import { useEffect } from "react"
 
 type UseDocumentTitleProps = {
-	title: string | undefined
+  title: string | undefined
 }
 
 function useDocumentTitle(props: UseDocumentTitleProps) {
-	const { title } = props
+  const { title } = props
 
-	useEffect(() => {
-		if (!title) return
+  useEffect(() => {
+    if (!title) return
 
-		document.title = `${title} | ${BASE_DOCUMENT_TITLE}`
+    document.title = `${title ?? ENV.APP_NAME} | ${ENV.AUTHOR}`
 
-		return () => {
-			document.title = BASE_DOCUMENT_TITLE
-		}
-	}, [title])
+    return () => {
+      document.title = `${ENV.APP_NAME} | ${ENV.AUTHOR}`
+    }
+  }, [title])
 }
 
 export { useDocumentTitle }

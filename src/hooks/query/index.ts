@@ -1,20 +1,20 @@
 export {
-	useCategoryMovieListInfiniteQuery,
-	type UseCategoryMovieListInfiniteQueryReturn,
-} from '@/hooks/query/useCategoryMovieListInfiniteQuery/useCategoryMovieListInfiniteQuery'
+  useCategoryMovieListInfiniteQuery,
+  type UseCategoryMovieListInfiniteQueryReturn,
+} from "@/hooks/query/useCategoryMovieListInfiniteQuery/useCategoryMovieListInfiniteQuery"
 export {
-	useMovieDetailsQuery,
-	type UseMovieDetailsQueryReturn,
-} from '@/hooks/query/useMovieDetailsQuery/useMovieDetailsQuery'
+  useMovieDetailsQuery,
+  type UseMovieDetailsQueryReturn,
+} from "@/hooks/query/useMovieDetailsQuery/useMovieDetailsQuery"
 export {
-	useRecommendationMovieListInfiniteQuery,
-	type UseRecommendationMovieListInfiniteQuery,
-} from '@/hooks/query/useRecommendationMovieListInfiniteQuery/useRecommendationMovieListInfiniteQuery'
+  useRecommendationMovieListInfiniteQuery,
+  type UseRecommendationMovieListInfiniteQuery,
+} from "@/hooks/query/useRecommendationMovieListInfiniteQuery/useRecommendationMovieListInfiniteQuery"
 export {
-	useTrendingMovieListInfiniteQuery,
-	type UseTrendingMovieListInfiniteQueryReturn,
-} from '@/hooks/query/useTrendingMovieListInfiniteQuery/useTrendingMovieListInfiniteQuery'
+  useTrendingMovieListInfiniteQuery,
+  type UseTrendingMovieListInfiniteQueryReturn,
+} from "@/hooks/query/useTrendingMovieListInfiniteQuery/useTrendingMovieListInfiniteQuery"
 export {
-	useSearchMovieListQuery,
-	type UseSearchMovieListQueryReturn,
-} from '@/hooks/query/useSearchMovieListQuery/useSearchMovieListQuery'
+  useSearchMovieListQuery,
+  type UseSearchMovieListQueryReturn,
+} from "@/hooks/query/useSearchMovieListQuery/useSearchMovieListQuery"
