@@ -26,14 +26,6 @@
 	"editor.formatOnPaste": false,
 	"editor.formatOnSave": true,
 	"editor.inlineSuggest.enabled": true,
-	"emeraldwalk.runonsave": {
-		"commands": [
-			{
-				"cmd": "bunx @biomejs/biome lint ${file} --apply-unsafe && bunx @biomejs/biome format ${file} --write",
-				"match": "\\.(ts|tsx|js|jsx|html)$"
-			}
-		]
-	},
 	"explorer.confirmDragAndDrop": true,
 	"files.associations": {
 		"*.css": "tailwindcss"
