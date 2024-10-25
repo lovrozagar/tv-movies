@@ -1,2 +1,2 @@
-export { FetchError } from '@/classes/fetchError'
-export { EnvError } from '@/classes/envError'
+export { FetchQueryError } from "@/classes/FetchQueryError"
+export { EnvError } from "@/classes/EnvError"
