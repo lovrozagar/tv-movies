@@ -118,4 +118,6 @@ function useVideoPlayer(props: UseVideoPlayerProps) {
   }
 }
 
-export { useVideoPlayer }
+type UseVideoPlayerReturn = ReturnType<typeof useVideoPlayer>
+
+export { useVideoPlayer, type UseVideoPlayerReturn }
