@@ -1,1 +1,1 @@
-export { Skeleton } from '@/components/skeleton/Skeleton'
+export { Skeleton } from "@/components/skeleton/Skeleton"

@@ -1,1 +1,1 @@
-export { Main } from '@/components/main/Main'
+export { Main } from "@/components/main/Main"
