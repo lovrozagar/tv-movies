@@ -1,1 +1,1 @@
-export { Router } from '@/router/Router'
+export { Router } from "@/router/Router"
