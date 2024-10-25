@@ -1,4 +1,4 @@
-import { useBackNavigation } from "@/modules/renderless/backNavigator/hooks/useBackNavigation"
+import { useBackNavigation } from "@/modules/renderless/BackNavigation/hooks/useBackNavigation"
 
 const BackNavigator = () => {
   useBackNavigation()
