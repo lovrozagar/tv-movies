@@ -1,1 +1,1 @@
-export { ENV } from '@/env/env'
+export { ENV } from "@/env/env"
